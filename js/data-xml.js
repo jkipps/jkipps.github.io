@@ -1,11 +1,14 @@
 function start(){
 
     var buttton = document.getElementById("buttom");
-    buttton.addEventListener(click,loader(),false);
+    buttton.addEventListener("click",loader,false);
 }
 
 function loader(){
     var xhr = new XMLHttpRequest();
+
+    var buttonEvent = document.getElementById("eventButtonValidation");
+    buttonEvent.textContent = "Button has been pressed";
 
 xhr.onload = function(){
 
@@ -46,4 +49,4 @@ xhr.open('GET', 'pages.github.io/data/data.xml', true);
 xhr.send(null);
 }
 
-window.onload = start();
+window.addEventListener("load", start, false);
