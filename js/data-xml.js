@@ -9,9 +9,6 @@ function start(){
 function loader(){
     var xhr = new XMLHttpRequest();
 
-    var buttonEvent = document.getElementById("eventloadValidation");
-    buttonEvent.textContent = "Button has been pressed";
-
 xhr.onload = function(){
 
   
