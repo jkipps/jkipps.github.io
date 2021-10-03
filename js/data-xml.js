@@ -16,7 +16,7 @@ xhr.onload = function(){
 
   
     if(xhr.status === 200){
-          var buttonEvent = document.getElementById("eventloadValidation");
+          var buttonEvent = document.getElementById("eventfailValidation");
     buttonEvent.textContent = "response received";
         
         //This part process the XML
@@ -49,7 +49,7 @@ xhr.onload = function(){
         }
 
     }else{
-          var buttonEvent = document.getElementById("eventloadValidation");
+          var buttonEvent = document.getElementById("eventfailValidation");
     buttonEvent.textContent = "response failed";
     }
 };
