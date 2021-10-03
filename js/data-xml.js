@@ -1,6 +1,6 @@
 function start(){
     var buttonEvent = document.getElementById("eventButtonValidation");
-    buttonEvent.textContent = "ready button";
+    buttonEvent.textContent = "ready button 2";
 
     var buttton = document.getElementById("button");
     buttton.onclick = loader;
@@ -16,8 +16,8 @@ xhr.onload = function(){
 
   
     if(xhr.status === 200){
-          var buttonEvent = document.getElementById("eventfailValidation");
-    buttonEvent.textContent = "response received";
+        
+         alert(`Done, got ${xhr.response.length} bytes`); // response is the server response
         
         //This part process the XML
         var response = xhr.responseXML;
@@ -30,6 +30,7 @@ xhr.onload = function(){
 
             image = document.createElement('img');
             image.setAttribute('src', getNodeValue(events[i], 'map'));
+             image.appendChild(document.createTextNode(getNodeValue(events[i], 'map')))
             container.appendChild(image);
 
             location = document.createElement('p');
@@ -53,9 +54,13 @@ xhr.onload = function(){
     buttonEvent.textContent = "response failed";
     }
 };
+   xhr.onerror = function() { // only triggers if the request couldn't be made at all
+  alert(`Network Error`);
+};
 
-xhr.open('GET', 'data/data.xml', true);
-xhr.send(null);
+
+xhr.open('GET', '/data/data.xml');
+xhr.send();
 }
 
 window.addEventListener("load", start, false);
