@@ -1,13 +1,15 @@
 function start(){
+    var buttonEvent = document.getElementById("eventButtonValidation");
+    buttonEvent.textContent = "ready button";
 
-    var buttton = document.getElementById("buttom");
-    buttton.addEventListener("click",loader,false);
+    var buttton = document.getElementById("button");
+    buttton.onclick = loader;
 }
 
 function loader(){
     var xhr = new XMLHttpRequest();
 
-    var buttonEvent = document.getElementById("eventButtonValidation");
+    var buttonEvent = document.getElementById("eventloadValidation");
     buttonEvent.textContent = "Button has been pressed";
 
 xhr.onload = function(){
