@@ -47,7 +47,7 @@ xhr.onload = function(){
     }
 };
 
-xhr.open('GET', 'pages.github.io/data/data.xml', true);
+xhr.open('GET', 'jkipps.github.io/data/data.xml', true);
 xhr.send(null);
 }
 
