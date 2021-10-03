@@ -14,6 +14,8 @@ function loader(){
 
 xhr.onload = function(){
 
+    var buttonEvent = document.getElementById("eventloadValidation");
+    buttonEvent.textContent = "response received";
     if(xhr.status === 200){
         //This part process the XML
         var response = xhr.responseXML;
