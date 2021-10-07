@@ -1,6 +1,6 @@
 function start(){
     var buttonEvent = document.getElementById("eventButtonValidation");
-    buttonEvent.textContent = "ready button 1";
+    buttonEvent.textContent = "ready button 2";
 
     var buttton = document.getElementById("button");
     buttton.onclick = loader;
