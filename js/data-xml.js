@@ -56,7 +56,7 @@ xhr.onload = function(){
 };
 
 
-xhr.open('GET', '/data/data.xml');
+xhr.open('GET', 'jkipps.github.io/data/data.xml');
 xhr.send();
 }
 
