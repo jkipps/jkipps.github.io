@@ -1,26 +1,26 @@
 function start(){
     var buttonEvent = document.getElementById("eventButtonValidation");
-    buttonEvent.textContent = "ready button 2";
+    buttonEvent.textContent = "ready button 3";
 
     var buttton = document.getElementById("button");
     buttton.onclick = loader;
 }
 
 function loader(){
-    var xhr = new XMLHttpRequest();
+    
+  var xhr = new XMLHttpRequest();
 
 xhr.onload = function(){
-
   
     if(xhr.status === 200){
         
-         alert(`Done, got ${xhr.response.length} bytes`); // response is the server response
+         alert(`Done, got ${xhr.responseXML} bytes`); // response is the server response
         
-        //This part process the XML
-        var response = xhr.responseXML;
+       //This part process the XML
+       /* var response = xhr.responseXML;
         var events = response.getElementsByTagName('event');
 
-        /* for (var i = 0; i < events.length; i++){
+         for (var i = 0; i < events.length; i++){
             var container, image, location, city, newline;
             container = document.createElement('div');
             container.className = 'event';
@@ -43,19 +43,10 @@ xhr.onload = function(){
             
         }*/
         
-        var strin = events[0].getElementsByTagName("date")[0].childNodes[0].nodeValue;
-         var content =document.getElementById('content');
-          content.textContent = content;
-
         function getNodeValue (obj, tag){
             return obj.getElementsByTagName(tag)[0].firstchild.nodeValue;
         }
-
-    }else{
-          var buttonEvent = document.getElementById("eventfailValidation");
-    buttonEvent.textContent = "response failed";
-    }
-};
+   }
    xhr.onerror = function() { // only triggers if the request couldn't be made at all
   alert(`Network Error`);
 };
