@@ -20,15 +20,15 @@ xhr.onload = function(){
         var response = xhr.responseXML;
         var events = response.getElementsByTagName('event');
 
-        for (var i = 0; i < events.length; i++){
+        /* for (var i = 0; i < events.length; i++){
             var container, image, location, city, newline;
             container = document.createElement('div');
             container.className = 'event';
 
-           // image = document.createElement('img');
-           // image.setAttribute('src', getNodeValue(events[i], 'map'));
-            // image.appendChild(document.createTextNode(getNodeValue(events[i], 'map')))
-            //container.appendChild(image);
+            image = document.createElement('img');
+            image.setAttribute('src', getNodeValue(events[i], 'map'));
+             image.appendChild(document.createTextNode(getNodeValue(events[i], 'map')))
+            container.appendChild(image);
 
             location = document.createElement('p');
             city = document.createElement('b');
@@ -40,7 +40,12 @@ xhr.onload = function(){
             container.appendChild(location);
 
             document.getElementById('content').appendChild(container);
-        }
+            
+        }*/
+        
+        var strin = events[0].getElementsByTagName("date")[0].childNodes[0].nodeValue;
+         var content =document.getElementById('content');
+          content.textContent = content;
 
         function getNodeValue (obj, tag){
             return obj.getElementsByTagName(tag)[0].firstchild.nodeValue;
